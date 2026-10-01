@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Occupation Generator</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("https://image.slidesdocs.com/responsive-images/background/eerie-blackened-wall-with-distressed-grungy-texture-perfectly-sinister-for-your-design-needs-powerpoint-background_054b9e9661__960_540.jpg");
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1 id="occupation">.</h1>
+        <button id="occupationBtn" onclick="getRandomOccupation()">Get Another One (SIKE you can't)</button>
+    </div>
+
+        <script>
+        const occupations = [
+            "Portable Toilet Cleaner",
+            "Funeral home Clerk",
+            "Septic Tank Technician",
+            "Astronaut", 
+            "Sewer Inspector",
+            "Toll Booth Collector",
+            "Asbestos Abatement Worker",
+            "SCP Caretaker", 
+            "Animal Waste Removal Specialist",
+            "Corporate Compliance Officer",
+            "Night Shift Security Guard",
+            "Factory Assembly Line Worker",
+            "Video Game Playtester",
+            "Asbestos Abatement Worker",
+            "Debt Collector",
+            "Medical Billing Clerk",
+            "Grease Trap Cleaner",
+            "Customer Service Phone Agent",
+            "Slaughterhouse Worker",
+            "Wildlife Documentary Filmmaker", 
+            "Elevator Repair Apprentice",
+            "Document Shredding Truck Driver",
+            "Dishwasher",
+            "Toenail Clipper Blade Sharpener",
+            "Mortuary Assistant",
+            "DMV Clerical Assistant",
+            "Landfill Operator",
+            "Commercial Diver",
+            "Hotel Bed Inspector",  
+            "Boiler Room Technician",
+            "Roadkill Removal Officer",
+            "Claims Adjuster",
+            "Cardboard Box Flattening Technician",
+            "Fish Gutter",
+            "Parking Enforcement Officer",
+            "Roofing Laborer in Summer",
+            "Archive Digitization Clerk",
+            "Pest Control but you ARE the pest",
+            "Hazardous Waste Transporter",
+            "Warehouse Order Picker",
+            "Subway Track Sweeper",
+            "Cold-Call Telemarketer",
+            "Industrial Grease Cleaner",
+            "Bridge Paint Scraper",
+            "Deep Sea Oil Rig Roughneck",
+            "Crypt Cleaning Assistant",
+            "Melt Shop Furnace Operator",
+            "Soiled Carpet Steam Cleaner",
+            "Lawn Care Fertilizer Applier",
+            "Textbook Fact-Checker",
+        ];
+
+        function getRandomOccupation() {
+            const randomIndex = Math.floor(Math.random() * occupations.length);
+            document.getElementById("occupation").innerText = occupations[randomIndex];
+            
+            document.getElementById("occupationBtn").disabled = true;
+        }
+
+        window.addEventListener("load", getRandomOccupation);
+        console.log("Random occupation displayed on page load.");
+    </script>
+</body>
+</html>
